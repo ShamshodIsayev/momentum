@@ -82,6 +82,23 @@ volumeRange.addEventListener("mousemove", (e) => {
   audio.volume = volumeRange.value;
 });
 
+volumeRange.addEventListener("change", (e) => {
+  audio.volume = volumeRange.value;
+});
+
+audioMute.addEventListener("click", (e) => {
+  volMute.classList.toggle("hide");
+  volOn.classList.toggle("hide");
+  toggleVolumeMute();
+});
+
+audio.addEventListener("timeupdate", updatePlayRange);
+audioTime.textContent = "0:00/ 5.57";
+
+changeCurrentAudioColor();
+updateTime();
+setTimeout( play, 3000);
+
 function updatePlayRange() {
   const percent = (audio.currentTime / audio.duration) * 100;
   playRange.value = percent;
@@ -95,7 +112,6 @@ function updateTime() {
   currentTime = `${currentTime[0]}:${currentTime[1]}/ ${duration}`;
   audioTime.textContent = currentTime;
 }
-updateTime();
 
 function toggleVolumeMute() {
   if (audio.volume == 0) {
@@ -106,19 +122,3 @@ function toggleVolumeMute() {
     audio.volume = 0;
   }
 }
-
-audio.addEventListener("timeupdate", updatePlayRange);
-
-volumeRange.addEventListener("change", (e) => {
-  audio.volume = volumeRange.value;
-});
-
-audioMute.addEventListener("click", (e) => {
-  volMute.classList.toggle("hide");
-  volOn.classList.toggle("hide");
-  toggleVolumeMute();
-});
-
-changeCurrentAudioColor();
-
-audioTime.textContent = "0:00/ 5.57";

@@ -54,6 +54,11 @@ leftArrow.addEventListener("click", (e) => {
   slidePrev();
 });
 
+setTimeout(function slideInterval() {
+  rightArrow.click()
+  setTimeout(slideInterval , 15000);
+}, 15000);
+
 function slideNext() {
   imageIndex++;
   // control randomNum
