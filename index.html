@@ -14,13 +14,20 @@
   </head>
   <body>
 
+    <ul class="settings dropdown" id="settings">
+      <span class="settings-span">Settings</span>
+      <li class="settings-li active audioplayerSet">Audioplayer</li>
+      <li class="settings-li active weatherSet">Weather</li>
+      <li class="settings-li active quotesSet">Quotes</li>
+    </ul>
+
     <select name="" id="lang" class="lang">
       <option value="en" disabled selected>Language</option>
       <option value="en">English</option>
       <option value="ru">Русский</option>
     </select>
     <header class="header">
-      <div class="player">
+      <div class="player active">
         <div class="player-controls">
           <button class="play-prev player-icon"></button>
           <button class="play player-icon"></button>
@@ -62,7 +69,7 @@
         </div>
         <ul class="play-list"></ul>
       </div>
-      <div class="weather">
+      <div class="weather active">
         <input type="text" class="city" />
         <i class="weather-icon owf"></i>
         <div class="weather-error"></div>
@@ -87,11 +94,13 @@
       </div>
     </main>
     <footer class="footer">
+      <div class="quotes active">
       <button class="change-quote"></button>
       <div>
         <div class="quote"></div>
         <div class="author"></div>
       </div>
+    </div>
     </footer>
     <script src="assets/js/translate.js"></script>
     <script src="assets/js/greeting.js"></script>
@@ -101,6 +110,7 @@
     <script src="assets/js/quotes.js"></script>
     <script src="assets/js/playList.js"></script>
     <script src="assets/js/audioplayer.js"></script>
+    <script src="assets/js/settings.js"></script>
     <script src="assets/js/script.js"></script>
   </body>
 </html>

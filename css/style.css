@@ -49,6 +49,14 @@ body {
   color: white;
 }
 
+.player.active{
+  opacity: 1;
+}
+
+.player{
+  opacity: 0;
+}
+
 .player-controls {
   display: flex;
   align-items: center;
@@ -175,7 +183,12 @@ body {
   row-gap: 5px;
   width: 180px;
   min-height: 180px;
+  opacity: 0;
   text-align: left;
+}
+
+.weather.active{
+  opacity: 1;
 }
 
 .weather-error {
@@ -300,6 +313,14 @@ body {
   padding: 20px;
 }
 
+.quotes{
+  opacity: 0;
+}
+
+.quotes.active{
+  opacity: 1;
+}
+
 .change-quote {
   margin-bottom: 30px;
   background-image: url("../assets/svg/reload.svg");
@@ -324,6 +345,50 @@ body {
 
 .div-info{
   width: 50px;
+}
+
+.settings{
+  height: 28px;
+  overflow-y: hidden;
+  background: transparent;
+  border: 1px solid white;
+  width: 150px;
+  position: absolute;
+  left: 50%;
+  top: 2vh;
+  transform: translateX(-50%);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.settings.active{
+  overflow-y: auto;
+  height: auto;
+}
+
+.settings span{
+  padding: 5px 0;
+  display: block;
+}
+
+.settings.active span{
+  color: white;
+  background: rgb(17, 17, 17);
+  display: block;
+}
+
+.settings-li.active{
+  background: rgb(17, 17, 17);
+  color: rgb(212, 198, 0);
+}
+
+@keyframes settings{
+
+}
+
+.settings li {
+  padding: 5px 0;
+  border: 0.5px solid white;
 }
 
 input[type="range"].player-range {

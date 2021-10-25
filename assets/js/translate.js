@@ -42,10 +42,13 @@ langSelected.addEventListener("change", (e) => {
     name.placeholder = "[Enter name]";
     initializeDataWeather(inputCity.value, "en");
     initializeQuotes();
+    initializeSettings(langSelected.value)
   } else if (e.target.value === "ru") {
+
     showDate();
     name.placeholder = "[Введите имя]";
     initializeDataWeather(inputCity.value, "ru");
     initializeQuotes(langSelected.value);
+    initializeSettings(langSelected.value)
   }
 });

@@ -41,6 +41,14 @@ playNext.addEventListener("click", (e) => {
   play();
 });
 
+audio.addEventListener('ended', e => {
+  currentAudio++;
+  if (currentAudio >= playList.length) currentAudio = 0;
+  currentAudioChange();
+  changeCurrentAudioColor();
+  play();
+})
+
 playPrev.addEventListener("click", (e) => {
   currentAudio--;
   if (currentAudio < 0) currentAudio = playList.length - 1;
